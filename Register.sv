@@ -1,15 +1,15 @@
-
+// memory.sv
 
 module memory #(
     parameter WORDS = 64
 ) (
-    input  clk,
-    input [31:0] address,
-    input  [31:0] write_data,
-    input  write_enable,
-    input  rst_n,
+    input logic clk,
+    input logic [31:0] address,
+    input logic [31:0] write_data,
+    input logic write_enable,
+    input logic rst_n,
 
-    output [31:0] read_data
+    output logic [31:0] read_data
 );
 
 /*
@@ -37,7 +37,7 @@ always @(posedge clk) begin
 end
 
 // Read logic
-  always@(*) begin
+always_comb begin
     //here, address[31:2] is the word index
     read_data = mem[address[31:2]]; 
 end
