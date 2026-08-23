@@ -1,4 +1,4 @@
-// memory.sv
+
 
 module memory #(
     parameter WORDS = 64
